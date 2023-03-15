@@ -5,10 +5,10 @@ document.addEventListener("DOMContentLoaded", function () {
 });
 
 function count() {
-  counter+=2;
+  counter++;
 
   if (counter % 10 === 0) {
-    alert("Mouse would like to thank you for the food 🥙");
+    alert("Mouse would like to thank you for the food food 🥙");
   }
 
   document.querySelector(".counter").innerHTML = counter;
