@@ -5,7 +5,7 @@ document.addEventListener("DOMContentLoaded", function () {
 });
 
 function count() {
-  counter++;
+  counter+=2;
 
   if (counter % 10 === 0) {
     alert("Mouse would like to thank you for the food 🥙");
