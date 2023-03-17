@@ -1,4 +1,4 @@
-let counter = 0;
+/* let counter = 0;
 
 document.addEventListener("DOMContentLoaded", function () {
   document.querySelector("button").onclick = count;
@@ -12,7 +12,7 @@ function count() {
   }
 
   document.querySelector(".counter").innerHTML = counter;
-}
+} */
 
 
 
