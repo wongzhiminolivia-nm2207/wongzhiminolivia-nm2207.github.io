@@ -15,6 +15,7 @@ const chart = new Chart(senti, {
     }]
   },
   options: {
+    maintainAspectRatio: false,
     scales: {
       xAxes: [{
         display: false,
