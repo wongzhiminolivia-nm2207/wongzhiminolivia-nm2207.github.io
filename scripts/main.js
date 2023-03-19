@@ -1,4 +1,5 @@
-document.getElementById('storyboardButton').addEventListener('click', function() {
+
+document.getElementById('storyboardButton').addEventListener('click', function () {
   window.open('https://miro.com/app/board/uXjVMdFH5Tc=/?share_link_id=350856146963');
 })
 
@@ -19,9 +20,14 @@ const chart = new Chart(senti, {
     scales: {
       xAxes: [{
         display: false,
+        scaleLabel: {
+          display: true,
+          labelString: 'test',
+        },
         barPercentage: 1.3,
         ticks: {
           max: 3,
+          color: 'green',
         }
       }, {
         display: true,
@@ -31,6 +37,7 @@ const chart = new Chart(senti, {
         }
       }],
       yAxes: [{
+        display: true,
         ticks: {
           beginAtZero: true
         }
@@ -38,3 +45,5 @@ const chart = new Chart(senti, {
     }
   }
 });
+
+// more charts to come 
