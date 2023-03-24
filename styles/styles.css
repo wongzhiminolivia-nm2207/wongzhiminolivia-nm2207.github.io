@@ -1,9 +1,10 @@
 body {
-  background-color: #bda114;
+  background-color: #e0cfb1;
   font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
     Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
   color: white;
   padding-left: 12px;
+  padding-right: 12px;
   padding-top: 4px;
 }
 
@@ -15,19 +16,71 @@ body {
   color: #fbbf24;
 }
 
+.diary {
+  background-color: #eedec4;
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+h1 {
+  color: #4d362e;
+  padding-left: 20px;
+}
 h2 {
-  color: #d68e2a;
+  color: #63453a;
+  padding-left: 20px;
+}
+h3 {
+  color: #845b4c;
+  padding-left: 20px;
+}
+p {
+  color: #694b40;
+  width: 70%;
+  padding-left: 20px;
+}
+.bojackimage {
+  width: 40%;
+  padding-left: 20px;
+}
+.reportButton {
+  padding-left: 20px;
+}
+.answer {
+  padding-left: 40px;
+  color: #845b4c;
+}
+.scriptimage {
+  width: 30%;
+  padding-left: 40px;
 }
 
-/* CSS */
+.list {
+  color: #555;
+  font-size: 22px;
+  padding: 0 !important;
+  width: 500px;
+  font-family: courier, monospace;
+  border: 1px solid #dedede;
+}
+.list li {
+  list-style: none;
+  border-bottom: 1px dotted #ccc;
+  text-indent: 25px;
+  height: auto;
+  padding: 10px;
+  text-transform: capitalize;
+}
+
+
+
 button {
   appearance: none;
-  background-color: #b45309;
+  background-color: #47a768;
   border: 1px solid rgba(27, 31, 35, 0.15);
   border-radius: 6px;
   box-shadow: rgba(27, 31, 35, 0.1) 0 1px 0;
   box-sizing: border-box;
-  color: #fff;
+  color: #eeeeee;
   cursor: pointer;
   display: inline-block;
   font-size: 16px;
@@ -38,20 +91,23 @@ button {
   text-align: center;
 }
 
+
 button:hover {
-  background-color: #92400e;
+  background-color: #3c8656;
 }
 
 /*nav bar*/
 .navbar {
   overflow: hidden;
-  background-color: #333;
+  background-color: #c8b99f;
 }
 
 .navbar a {
   float: left;
   font-size: 16px;
-  color: white;
+  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
+    Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+  color: #845b4c;
   text-align: center;
   padding: 14px 16px;
   text-decoration: none;
@@ -64,9 +120,11 @@ button:hover {
 
 .dropdown .dropbtn {
   font-size: 16px;  
+  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
+    Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
   border: none;
   outline: none;
-  color: white;
+  color: #845b4c;
   padding: 14px 16px;
   background-color: inherit;
   font-family: inherit;
@@ -74,7 +132,7 @@ button:hover {
 }
 
 .navbar a:hover, .dropdown:hover .dropbtn {
-  background-color: red;
+  background-color: #c3a791;
 }
 
 .dropdown-content {
@@ -88,7 +146,7 @@ button:hover {
 
 .dropdown-content a {
   float: none;
-  color: black;
+  color: #845b4c;
   padding: 12px 16px;
   text-decoration: none;
   display: block;
@@ -103,6 +161,3 @@ button:hover {
   display: block;
 }
 
-.website {
-  float: right;
-}
