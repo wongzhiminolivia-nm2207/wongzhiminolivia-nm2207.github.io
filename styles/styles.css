@@ -21,34 +21,46 @@ body {
   padding-top: 10px;
   padding-bottom: 10px;
 }
+
 h1 {
   color: #4d362e;
   padding-left: 20px;
 }
+
 h2 {
   color: #63453a;
   padding-left: 20px;
 }
+
 h3 {
   color: #845b4c;
   padding-left: 20px;
 }
+
 p {
   color: #694b40;
   width: 70%;
   padding-left: 20px;
 }
+
 .bojackimage {
   width: 40%;
   padding-left: 20px;
 }
+
 .reportButton {
   padding-left: 20px;
 }
+
 .answer {
   padding-left: 40px;
   color: #845b4c;
 }
+
+.references {
+  font-size: 14px;
+}
+
 .scriptimage {
   width: 30%;
   padding-left: 40px;
@@ -62,6 +74,7 @@ p {
   font-family: courier, monospace;
   border: 1px solid #dedede;
 }
+
 .list li {
   list-style: none;
   border-bottom: 1px dotted #ccc;
@@ -119,7 +132,7 @@ button:hover {
 }
 
 .dropdown .dropbtn {
-  font-size: 16px;  
+  font-size: 16px;
   font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
     Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
   border: none;
@@ -131,7 +144,8 @@ button:hover {
   margin: 0;
 }
 
-.navbar a:hover, .dropdown:hover .dropbtn {
+.navbar a:hover,
+.dropdown:hover .dropbtn {
   background-color: #c3a791;
 }
 
@@ -140,7 +154,7 @@ button:hover {
   position: absolute;
   background-color: #f9f9f9;
   min-width: 160px;
-  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
   z-index: 1;
 }
 
@@ -161,3 +175,53 @@ button:hover {
   display: block;
 }
 
+/* flip card */
+  .flip-card {
+    background-color: transparent;
+    width: 500px;
+    height: 300px;
+    perspective: 1000px;
+  }
+  .flip-card-inner {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    transition: transform 0.6s;
+    transform-style: preserve-3d;
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+  }
+
+  .flip-card:hover .flip-card-inner {
+    transform: rotateY(180deg);
+  }
+
+  .flip-card-front, .flip-card-back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+  }
+
+  .flip-card-front {
+    background-color: #bbb;
+    color: black;
+  }
+
+  .flip-card-back {
+    background-color: #16242d;
+    color: white;
+    transform: rotateY(180deg);
+  }
+  .centered {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+  #flipcard {
+    color:#16242d;
+    font-size: 25px;
+    background-color: rgba(236, 234, 234, 0.479);
+  }

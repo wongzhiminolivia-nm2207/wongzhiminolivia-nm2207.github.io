@@ -1,4 +1,4 @@
 
-document.getElementById('storyboardButton').addEventListener('click', function () {
-  window.open('https://miro.com/app/board/uXjVMdFH5Tc=/?share_link_id=350856146963');
+document.getElementById('reportButton').addEventListener('click', function () {
+  window.open('https://docs.google.com/document/d/12ckpat_aXqdiYNAEKECVL_u_KmzW0fYJA5QbX-T9-mI/edit?usp=sharing');
 })

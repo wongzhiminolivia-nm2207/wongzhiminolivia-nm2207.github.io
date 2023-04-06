@@ -114,19 +114,20 @@
       there is missing or broken data, to ensure that sentiment analysis can be conducted according to character for
       each
       episode.</p>
-    <p><b>References</b></p>
-    <p>Travers, B. & Nguyen, H. (2023). The best animated series of all time.
+    <p class="references"><b>References</b></p>
+    <p class="references">Travers, B. & Nguyen, H. (2023). The best animated series of all time.
       https://www.indiewire.com/feature/best-animated-series-all-time-cartoons-anime-tv-1202021835/6/</p>
-    <p>YouGov America. (2022). Bojack Horseman. Retrieved March 24, 2023, from
+    <p class="references">YouGov America. (2022). Bojack Horseman. Retrieved March 24, 2023, from
       https://today.yougov.com/topics/entertainment/explore/tv_show/BoJack_Horseman</p>
-    <p>Hasan, W. (2019, May 30). Why relating to Bojack doesn’t make you special. Retrieved March 24, 2023, from
+    <p class="references">Hasan, W. (2019, May 30). Why relating to Bojack doesn’t make you special. Retrieved March 24,
+      2023, from
       https://www.thedailystar.net/shout/news/why-relating-bojack-doesnt-make-you-special-1750717</p>
     <br>
     <img src="resources\terrifyingworld.gif" class="bojackimage" style="width: 320px">
     <br>
     <h3><b>Week 11</b></h3>
     <p><b>Data</b></p>
-    <p>I continue to work on my BoJack Horseman scripts as my dataset. I also consider using the <a
+    <p class="answer">I continue to work on my BoJack Horseman scripts as my dataset. I also consider using the <a
         href="https://www.metacritic.com/tv/bojack-horseman" target="_blank">Metacritic</a>
       user reviews for each season of the series as data for one of my charts as well. After conducting sentiment
       analysis on the script,
@@ -135,27 +136,32 @@
       season, and specific characters. Compound sentiments are determined by the percentage scores of positive and
       negative sentiment respectively.</p>
     <p><b>Visualisations</b></p>
-    <p>I plan to use a pie chart to display what proportion of the total amount of dialogue can be attributed to each
+    <p class="answer">I plan to use a pie chart to display what proportion of the total amount of dialogue can be
+      attributed to each
       main character.
       From this, I hope to show that the main character, BoJack, bears the most amount of dialogue, and hence carries
       much of the show.</p>
-    <p>From there, I will utilise line graphs or perhaps histograms, to showcase the change in sentiment across
+    <p class="answer">From there, I will utilise line graphs or perhaps histograms, to showcase the change in sentiment
+      across
       episodes,
       and across seasons. I might focus on only Season 1 and Season 6 to plot the change in sentiment across
       episodes—this
       would serve as a direct comparison between the start and end of the TV series, to allow for analysis of how the
       show has
       potentially evolved. </p>
-    <p>Alternatively, I will add a button that allows for a change in visualisations. Users can then cycle through donut
+    <p class="answer">Alternatively, I will add a button that allows for a change in visualisations. Users can then
+      cycle through donut
       charts
       of the sentiment make-up of each season. However, I am unsure about this method as it would not allow for a clear
       visual
       comparison of change over time (across seasons). </p>
-    <p>If I have time, I will visualise example lines of dialogue that have been analysed to be placed under the
+    <p class="answer">If I have time, I will visualise example lines of dialogue that have been analysed to be placed
+      under the
       positive/negative/neutral sentiment baskets. This would potentially be interactive, whereby users can hover over
       segments
       of the sentences to see which words or characters implicate the overall sentiment score of the sentence.</p>
-    <p>I will also use bar graphs to plot change in sentiment specific to BoJack’s dialogue across seasons, to
+    <p class="answer">I will also use bar graphs to plot change in sentiment specific to BoJack’s dialogue across
+      seasons, to
       potentially
       illuminate any character development. In the bar graphs, I will try to display the proportion of negative and
       positive
@@ -168,12 +174,13 @@
       Mr. Peanutbutter, an ostensibly carefree, happy-go-lucky secondary character, to make comparisons between any
       change or
       non-change in character. </p>
-    <p>I will consider plotting user ratings across episodes using either a bar graph or a line graph.
+    <p class="answer">I will consider plotting user ratings across episodes using either a bar graph or a line graph.
       However, I am still thinking about how to actively compare, visually, the user ratings per episode and the
       sentiment of the
       respective episodes. </p>
     <p><b>Errors faced</b></p>
-    <p>I am currently in the midst of trying out sentiment analysis on my script data. However, I have faced many errors
+    <p class="answer">I am currently in the midst of trying out sentiment analysis on my script data. However, I have
+      faced many errors
       on my
       Google Colab. I am using VADER’s SentimentIntensityAnalyser to carry out sentiment analysis. I had issues reading
       my .csv
@@ -184,14 +191,39 @@
       It confuses me, as my data does not seem to be of the float type (it is all text). I am still in the midst of
       solving this!</p>
     <p><b>Challenges</b></p>
-    <p>Furthermore, I am still thinking about whether I have chosen the most effective visualisations (bar, line,
+    <p class="answer">Furthermore, I am still thinking about whether I have chosen the most effective visualisations
+      (bar, line,
       histogram…),
       and which platform to use. I know that we are encouraged to use chart.js, but d3 looks interesting too. There is
       also
       flourish.studio, but since there is not much coding involved with this data visualisation tool, I am not sure if
       it would be
       alright for this project. </p>
-      <img src="resources\stars.gif" class="bojackimage" style="width: 320px"><br>
+    <img src="resources\stars.gif" class="answer" style="width: 320px">
+    <br>
+    <h3><b>Week 12</b></h3>
+    <p><b>Data</b></p>
+    <p class="answer">I have finally completed sentiment analysis using Python — I had faced many issues e.g.
+      attributeError, data type
+      issues…
+      but I now have my analysed data in a csv file (thank you Jeremiah for da help).</p>
+    <p class="answer">I added a new column to this dataset to specify which season and episode each line of dialogue
+      stemmed from.
+      It was hard to accomplish this in an efficient way, but I found an interesting work-around using formulas on
+      Sheets to try
+      and do this as quickly as possible. I hope this turns out to be useful…</p>
+    <img src="resources\sentimentdata.png" class="answer" style="width: 420px">
+    <p class="answer"><em>My current data and how I categorised it by season and episode</em></p>
+    <p><b>Data story</b></p>
+    <p class="answer">I have been trying to plan out my visualisations and how to go about telling the data story.
+      I have quickly sketched out the assets that I will try to implement on my website.</p>
+    <img src="resources\sketchedassets.jpg" class="answer" style="width: 500px">
+    <p class="answer">I am considering doing a scroll site using <a
+        href="https://pudding.cool/process/introducing-scrollama/" target="_blank">scrollama</a>,
+      but will just position these assets in order instead if I do not have the time.</p>
+    <p>Progress</p>
+    <p class="answer">I have started on the flip cards, at the bottom of my data story page.</p>
+
   </div>
 
 

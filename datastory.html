@@ -4,6 +4,16 @@
 <head>
     <title>Data Story</title>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.2/Chart.min.js"></script>
+    <!-- Load plotly.js into the DOM -->
+    <script src='https://cdn.plot.ly/plotly-2.18.2.min.js'></script>
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/d3/3.5.17/d3.min.js'></script>
+
+    <meta charset="utf-8">
+    <!-- Load d3.js -->
+    <script src="https://d3js.org/d3.v4.js"></script>
+    <!-- Load d3-cloud -->
+    <script src="https://cdn.jsdelivr.net/gh/holtzy/D3-graph-gallery@master/LIB/d3.layout.cloud.js"></script>
+
     <script src="scripts/datastory.js" defer></script>
     <link rel="stylesheet" href="styles/styles.css" />
 </head>
@@ -13,21 +23,42 @@
         <a href="index.html">Home</a>
         <a href="datastory.html">Datastory</a>
         <div class="dropdown">
-            <button class="dropbtn">Dropdown
+            <button class="dropbtn">More
                 <i class="fa fa-caret-down"></i>
             </button>
             <div class="dropdown-content">
-                <a href="#">Link 1</a>
-                <a href="#">Link 2</a>
-                <a href="#">Link 3</a>
+                <a href="https://miro.com/app/board/uXjVMdFH5Tc=/?share_link_id=350856146963"
+                    target="_blank">Storyboard</a>
+                <a href="https://docs.google.com/document/d/12ckpat_aXqdiYNAEKECVL_u_KmzW0fYJA5QbX-T9-mI/edit?usp=sharing"
+                    target="_blank">Week 9 Report</a>
+                <a href="test.html">test</a>
+                <a href="https://nm2207.org/2223S2/e0773405/web/" target="_blank">My NM2207 Webpage</a>
             </div>
         </div>
     </div>
+
     <h1>Data Story</h1>
-    <p>hi?</p>
     <div>
         <canvas id="histogram" width="400" height="400"></canvas>
     </div>
+    <div id='myDiv'><!-- Plotly chart will be drawn inside this DIV --></div>
+    <div id='boxplot'><!-- Plotly chart will be drawn inside this DIV --></div>
+    <div id='lineplot'><!-- Plotly chart will be drawn inside this DIV --></div>
+    <div id="my_dataviz"><!--word cloud--></div>
+
+    <div class="flip-card">
+        <div class="flip-card-inner">
+            <div class="flip-card-front">
+                <p class="centered" id="flipcard">Positive sentiment</p>
+                <img src="resources/bojackhappy.png" alt="Avatar" style='height: 100%; width: 100%; object-fit: contain'/>
+            </div>
+            <div class="flip-card-back">
+                <h1>BoJack:</h1>
+                <p class="centered">Well, good morning to you too.</p>
+            </div>
+        </div>
+    </div>
+
 </body>
 
 </html>
