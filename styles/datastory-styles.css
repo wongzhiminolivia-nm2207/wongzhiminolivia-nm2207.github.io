@@ -1,33 +1,55 @@
-@font-face {
-    font-family: myFirstFont;
-    src: url(sansation_light.woff);
-}
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@200;300;400;500;600;700;800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@200;300;400;500;600;700;800&family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,300&display=swap');
 
 body {
-    background-color: #e0cfb1;
-    font-family: Arial, Helvetica, sans-serif;
+    background-color: rgba(40, 36, 46, 255);
+    font-family: 'Inter', sans-serif;
     color: white;
     padding-top: 4px;
     margin: 0;
 }
 
 h1 {
-    color: #4d362e;
-    padding-left: 10px;
-    font-size: 40px;
+    padding-left: 80px;
+    padding-right: 80px;
+    font-size: 36px;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 900;
 }
 
 h2 {
-    color: #473731;
+    padding-left: 80px;
+    padding-right: 80px;
     font-size: 30px;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 700;
 }
 
 h3 {
-    color: #473731;
+    padding-left: 80px;
+    padding-right: 80px;
 }
 
 p {
-    color: #694b40;
+    padding-left: 80px;
+    padding-right: 80px;
+}
+
+a {
+    background: linear-gradient(to bottom, var(--mainColor) 0%, var(--mainColor) 100%);
+    background-position: 0 100%;
+    background-repeat: repeat-x;
+    background-size: 3px 3px;
+    color: white;
+    text-decoration: none;
+}
+
+a:hover {
+    background-image: url("data:image/svg+xml;charset=utf8,%3Csvg id='squiggle-link' xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' xmlns:ev='http://www.w3.org/2001/xml-events' viewBox='0 0 20 4'%3E%3Cstyle type='text/css'%3E.squiggle{animation:shift .3s linear infinite;}@keyframes shift {from {transform:translateX(0);}to {transform:translateX(-20px);}}%3C/style%3E%3Cpath fill='none' stroke='%23ff9800' stroke-width='2' class='squiggle' d='M0,3.5 c 5,0,5,-3,10,-3 s 5,3,10,3 c 5,0,5,-3,10,-3 s 5,3,10,3'/%3E%3C/svg%3E");
+    background-position: 0 100%;
+    background-size: auto 6px;
+    background-repeat: repeat-x;
+    text-decoration: none;
 }
 
 .head-container {
@@ -38,6 +60,7 @@ p {
     width: 100%;
     position: relative;
     margin-top: 10px;
+    margin-bottom: 10px;
 }
 
 .first-container {
@@ -53,8 +76,8 @@ p {
 /*nav bar*/
 .navbar {
     overflow: hidden;
-    background-color: #c8b99f;
-    margin: 20px 14px 0px;
+    background-color: #19171c;
+    margin: 10px 14px 4px;
 }
 
 .navbar a {
@@ -62,7 +85,7 @@ p {
     font-size: 16px;
     font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
         Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
-    color: #845b4c;
+    color: #b0afbe;
     text-align: center;
     padding: 14px 16px;
     text-decoration: none;
@@ -79,7 +102,7 @@ p {
         Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
     border: none;
     outline: none;
-    color: #845b4c;
+    color: #b0afbe;
     padding: 14px 16px;
     background-color: inherit;
     font-family: inherit;
@@ -130,21 +153,21 @@ p {
     vertical-align: middle;
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
     margin: 20px;
-    width: 300px;
-    height: 200px;
+    width: 400px;
+    height: 250px;
     perspective: 1000px;
 }
 
 .positive {
-    background-color: rgb(255, 223, 14);
+    background-color: #e8d227;
 }
 
 .neutral {
-    background-color: rgb(31, 202, 151);
+    background-color: #546e1f;
 }
 
 .negative {
-    background-color: rgb(18, 157, 204);
+    background-color: #2f5eb2;
 }
 
 .flip-card-inner {
@@ -191,4 +214,6 @@ p {
     color: #1a1818;
     margin: 0.5em;
     line-height: 0.9;
+    padding-left: 0;
+    padding-right: 0;
 }

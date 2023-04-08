@@ -19,36 +19,37 @@
 </head>
 
 <body>
-    <div class="navbar">
-        <a href="index.html">Home</a>
-        <a href="datastory.html">Datastory</a>
-        <div class="dropdown">
-            <button class="dropbtn">More
-                <i class="fa fa-caret-down"></i>
-            </button>
-            <div class="dropdown-content">
-                <a href="https://miro.com/app/board/uXjVMdFH5Tc=/?share_link_id=350856146963"
-                    target="_blank">Storyboard</a>
-                <a href="https://docs.google.com/document/d/12ckpat_aXqdiYNAEKECVL_u_KmzW0fYJA5QbX-T9-mI/edit?usp=sharing"
-                    target="_blank">Week 9 Report</a>
-                <a href="test.html">test</a>
-                <a href="https://nm2207.org/2223S2/e0773405/web/" target="_blank">My NM2207 Webpage</a>
+    <section class="navbar-container">
+        <div class="navbar">
+            <a href="index.html">Home</a>
+            <a href="datastory.html">Datastory</a>
+            <div class="dropdown">
+                <button class="dropbtn">More
+                    <i class="fa fa-caret-down"></i>
+                </button>
+                <div class="dropdown-content">
+                    <a href="https://miro.com/app/board/uXjVMdFH5Tc=/?share_link_id=350856146963"
+                        target="_blank">Storyboard</a>
+                    <a href="https://docs.google.com/document/d/12ckpat_aXqdiYNAEKECVL_u_KmzW0fYJA5QbX-T9-mI/edit?usp=sharing"
+                        target="_blank">Week 9 Report</a>
+                    <a href="test.html">test</a>
+                    <a href="https://nm2207.org/2223S2/e0773405/web/" target="_blank">My NM2207 Webpage</a>
+                </div>
             </div>
         </div>
-    </div>
+    </section>
 
     <section class="head-container">
-        <h1 style="text-align:center;color:rgb(241, 239, 243);"><b>BoJack Horseman: Stop Horsin' Around!</b></h1>
-        <h3 style="text-align:center;color:rgb(241, 239, 243);">For those who indulge in the popular TV series or
-            strongly relate to
-            its protagonist</h3>
-        <h2 style="text-align:center;color:rgb(241, 239, 243);">BoJack Horseman</h2>
-        <h3 style="text-align:center;color:rgb(241, 239, 243);">you might want to reconsider.</h3>
-        <p style="text-align:center;color:rgb(241, 239, 243);"><b>I investigate why in this data story.</b></p>
+        <h1><b>BoJack Horseman: Stop Horsin' Around!</b></h1>
+        <h3 style="font-weight:lighter;">For those who indulge in the popular TV series or
+            strongly relate to its protagonist: BoJack Horseman, you might want to reconsider.</h3><br>
+        <p style="font-weight:lighter;">I investigate why in this data story.</p><br>
+        <img src="resources/running.gif" style="width:60%;padding-left:80px;padding-right:80px">
     </section>
 
     <section class="first-container">
-        <h1>Let's take a look at example lines of dialogue for each sentiment</h1>
+        <h2 style="color: #2e2c38;">How do different sentiments sound like?</h2>
+        <p style="color: #2e2c38;">Example lines of dialogue from the show, based on sentiment</p>
         <div class="flip-card-container">
             <div class="flip-card">
                 <div class="flip-card-inner positive">
@@ -58,8 +59,7 @@
                         <h2 id="h2-flip">😊</h2>
                     </div>
                     <div class="flip-card-back">
-                        <h1>BoJack:</h1>
-                        <p>Well, good morning to you too.</p>
+                        <img src="resources/asexual.jpg" style='height: 100%; width: 100%; object-fit: cover'>
                     </div>
                 </div>
             </div>
@@ -71,7 +71,7 @@
                         <h2 id="h2-flip">😑</h2>
                     </div>
                     <div class="flip-card-back">
-                        <p>Neutral quote</p>
+                        <img src="resources/immigrants.png" style='height: 100%; width: 100%; object-fit: cover'>
                     </div>
                 </div>
             </div>
@@ -88,14 +88,28 @@
                 </div>
             </div>
         </div>
-    </section>
-    <h2>Pie Chart:</h2>
+        <br>
+        <p style="color: #2e2c38;">Sentiment analysis for the dialogue scraped from the entire series (Seasons 1 to 6) was
+            conducted using VADER by Python. Check out the Google Colab <a
+                href="https://colab.research.google.com/drive/1MXrnLIo61gLwRGauyMBDkmfMfxWqnoYG?usp=share_link" target="_blank" style="color: #2e2c38;">here</a>!
+        </p>
+    </section><br>
     <div>
-        <canvas id="pie" width="400" height="400"><!--Not sure why pie isn't showing up--></canvas>
+        <h2 style="text-align:center;">How many lines of dialogue?</h2>
+        <p style="text-align:center;">Total number of lines of dialogue based on character (all seasons)</p>
+        <br>
+        <canvas id="pie" width="200" height="200"></canvas>
+        <br>
+        <p style="text-align:center;">We can observe how the main protagonist, <a
+                href="https://www.thedailystar.net/shout/news/why-relating-bojack-doesnt-make-you-special-1750717"
+                target="_blank">BoJack
+                Horseman</a>, accounts for majority of the
+            dialogue throughout the series.
+        </p>
     </div>
 
     <div>
-        <canvas id="histogram" width="400" height="400"></canvas>
+        <canvas id="histogram" width="200" height="200"></canvas>
     </div>
     <div id='myDiv'><!-- Plotly chart will be drawn inside this DIV --></div>
     <div id='boxplot'><!-- Plotly chart will be drawn inside this DIV --></div>

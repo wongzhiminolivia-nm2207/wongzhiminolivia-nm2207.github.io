@@ -9,23 +9,36 @@ const pieChart = new Chart(pie, {
   type: 'pie',
   data: {
     labels: [
-      'Red',
-      'Blue',
-      'Yellow'
+      'BoJack Horseman',
+      'Todd',
+      'Princess Carolyn',
+      'Diane',
+      'Mr. Peanutbutter',
+      'Other characters'
     ],
     datasets: [{
       label: 'My First Dataset',
-      data: [300, 50, 100],
+      data: [5091, 1625, 1792, 2098, 1586, 8724],
       backgroundColor: [
-        'rgb(255, 99, 132)',
-        'rgb(54, 162, 235)',
-        'rgb(255, 205, 86)'
+        '#c16643',
+        '#e70125',
+        '#fa84e6',
+        '#546e1f',
+        '#f9df22',
+        '#2f5eb2',
       ],
       hoverOffset: 4
     }]
   },
   options: {
     maintainAspectRatio: false,
+    legend: {
+      position: "bottom",
+      labels: {
+        fontColor: "#fff9f4",
+        fontSize: 12,
+      }
+    }
   }
 });
 
