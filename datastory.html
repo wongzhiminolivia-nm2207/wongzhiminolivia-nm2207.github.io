@@ -15,7 +15,7 @@
     <script src="https://cdn.jsdelivr.net/gh/holtzy/D3-graph-gallery@master/LIB/d3.layout.cloud.js"></script>
 
     <script src="scripts/datastory.js" defer></script>
-    <link rel="stylesheet" href="styles/styles.css" />
+    <link rel="stylesheet" href="styles/datastory-styles.css" />
 </head>
 
 <body>
@@ -37,7 +37,63 @@
         </div>
     </div>
 
-    <h1>Data Story</h1>
+    <section class="head-container">
+        <h1 style="text-align:center;color:rgb(241, 239, 243);"><b>BoJack Horseman: Stop Horsin' Around!</b></h1>
+        <h3 style="text-align:center;color:rgb(241, 239, 243);">For those who indulge in the popular TV series or
+            strongly relate to
+            its protagonist</h3>
+        <h2 style="text-align:center;color:rgb(241, 239, 243);">BoJack Horseman</h2>
+        <h3 style="text-align:center;color:rgb(241, 239, 243);">you might want to reconsider.</h3>
+        <p style="text-align:center;color:rgb(241, 239, 243);"><b>I investigate why in this data story.</b></p>
+    </section>
+
+    <section class="first-container">
+        <h1>Let's take a look at example lines of dialogue for each sentiment</h1>
+        <div class="flip-card-container">
+            <div class="flip-card">
+                <div class="flip-card-inner positive">
+                    <div class="flip-card-front">
+                        <h2 id="h2-flip">Positive</h2>
+                        <h2 id="h2-flip">Sentiment</h2>
+                        <h2 id="h2-flip">😊</h2>
+                    </div>
+                    <div class="flip-card-back">
+                        <h1>BoJack:</h1>
+                        <p>Well, good morning to you too.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="flip-card">
+                <div class="flip-card-inner neutral">
+                    <div class="flip-card-front">
+                        <h2 id="h2-flip">Neutral</h2>
+                        <h2 id="h2-flip">Sentiment</h2>
+                        <h2 id="h2-flip">😑</h2>
+                    </div>
+                    <div class="flip-card-back">
+                        <p>Neutral quote</p>
+                    </div>
+                </div>
+            </div>
+            <div class="flip-card">
+                <div class="flip-card-inner negative">
+                    <div class="flip-card-front">
+                        <h2 id="h2-flip">Negative</h2>
+                        <h2 id="h2-flip">Sentiment</h2>
+                        <h2 id="h2-flip">☹️</h2>
+                    </div>
+                    <div class="flip-card-back">
+                        <img src="resources/metabolising.png" style='height: 100%; width: 100%; object-fit: cover'>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <h2>Pie Chart:</h2>
+    <div>
+        <canvas id="pie" width="400" height="400"><!--Not sure why pie isn't showing up--></canvas>
+    </div>
+
     <div>
         <canvas id="histogram" width="400" height="400"></canvas>
     </div>
@@ -45,34 +101,6 @@
     <div id='boxplot'><!-- Plotly chart will be drawn inside this DIV --></div>
     <div id='lineplot'><!-- Plotly chart will be drawn inside this DIV --></div>
     <div id="my_dataviz"><!--word cloud--></div>
-
-    <div class="flip-card">
-        <div class="flip-card-inner">
-            <div class="flip-card-front">
-                <p class="centered">Positive</p>
-                <!--<img src="resources/bojackhappy.png" alt="Avatar"
-                    style='height: 100%; width: 100%; object-fit: contain' />-->
-            </div>
-            <div class="flip-card-back">
-                <h1>BoJack:</h1>
-                <p>Well, good morning to you too.</p>
-            </div>
-        </div>
-        <div class="flip-card-inner">
-            <div class="flip-card-front">
-                <p class="centered">Neutral</p>
-            </div>
-            <div class="flip-card-back">
-                <p>Neutral quote</p>
-            </div>
-
-        </div>
-    </div>
-    
-    <h2>Pie Chart:</h2>
-    <div>
-        <canvas id="pie" width="400" height="400"><!--Not sure why pie isn't showing up--></canvas>
-    </div>
 
 
 

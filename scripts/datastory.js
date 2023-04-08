@@ -1,3 +1,54 @@
+
+
+
+// PIE
+
+const pie = document.getElementById('pie').getContext('2d');
+
+const pieChart = new Chart(pie, {
+  type: 'pie',
+  data: {
+    labels: [
+      'Red',
+      'Blue',
+      'Yellow'
+    ],
+    datasets: [{
+      label: 'My First Dataset',
+      data: [300, 50, 100],
+      backgroundColor: [
+        'rgb(255, 99, 132)',
+        'rgb(54, 162, 235)',
+        'rgb(255, 205, 86)'
+      ],
+      hoverOffset: 4
+    }]
+  },
+  options: {
+    maintainAspectRatio: false,
+  }
+});
+
+
+/*/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+// testing fetch
+const data = fetch(
+  "..\data\bojackhorsemansentiments.csv"
+)
+  .then(function (response) {
+    return response.text();
+  })
+  .then(function (data) {
+    const table = [];
+    const rows = data.split("\r\n");
+  })
+rows.forEach((r, index) => {
+  const item = rows.split(",");
+  table.push(item);
+});
+console.log(table);
+
+
 const senti = document.getElementById('histogram').getContext('2d');
 
 const chart = new Chart(senti, {
@@ -303,7 +354,8 @@ d3.csv("https://raw.githubusercontent.com/plotly/datasets/master/gapminder_with_
 });
 
 
-/* word cloud with d3
+
+// word cloud with d3
 
 // List of words
 var myWords = ["Hello", "Everybody", "How", "Are", "You", "Today", "It", "Is", "A", "Lovely", "Day", "I", "Love", "Coding", "In", "My", "Van", "Mate"]
@@ -346,20 +398,5 @@ function draw(words) {
     })
     .text(function (d) { return d.text; });
 }
-*/
 
-const data = fetch(
-  "..\data\bojackhorsemansentiments.csv"
-)
-  .then(function (response) {
-    return response.text();
-  })
-  .then(function (data) {
-    const table = [];
-    const rows = data.split("\r\n");
-  })
-rows.forEach((r, index) => {
-  const item = rows.split(",");
-  table.push(item);
-});
-console.log(table);
+*/
