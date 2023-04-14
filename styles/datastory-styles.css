@@ -33,9 +33,11 @@ h3 {
 p {
     padding-left: 80px;
     padding-right: 80px;
+    font-size: 16px;
 }
 
-a {
+/* links with orange wave */
+.wobble {
     background: linear-gradient(to bottom, var(--mainColor) 0%, var(--mainColor) 100%);
     background-position: 0 100%;
     background-repeat: repeat-x;
@@ -44,7 +46,7 @@ a {
     text-decoration: none;
 }
 
-a:hover {
+.wobble:hover {
     background-image: url("data:image/svg+xml;charset=utf8,%3Csvg id='squiggle-link' xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' xmlns:ev='http://www.w3.org/2001/xml-events' viewBox='0 0 20 4'%3E%3Cstyle type='text/css'%3E.squiggle{animation:shift .3s linear infinite;}@keyframes shift {from {transform:translateX(0);}to {transform:translateX(-20px);}}%3C/style%3E%3Cpath fill='none' stroke='%23ff9800' stroke-width='2' class='squiggle' d='M0,3.5 c 5,0,5,-3,10,-3 s 5,3,10,3 c 5,0,5,-3,10,-3 s 5,3,10,3'/%3E%3C/svg%3E");
     background-position: 0 100%;
     background-size: auto 6px;
@@ -63,7 +65,7 @@ a:hover {
     margin-bottom: 10px;
 }
 
-.first-container {
+.light-container {
     background-color: #fff9f4;
     box-sizing: border-box;
     padding: 10px;
@@ -112,7 +114,7 @@ a:hover {
 
 .navbar a:hover,
 .dropdown:hover .dropbtn {
-    background-color: #c3a791;
+    background-color: #2f2c35;
 }
 
 .dropdown-content {
@@ -217,4 +219,59 @@ a:hover {
     line-height: 0.9;
     padding-left: 0;
     padding-right: 0;
+}
+
+/* modal for senti bar */
+
+#barModal {
+    z-index: 1;
+    opacity: 100;
+    transition: opacity 0.2s;
+}
+#barModal.hide {
+    /* z-index is the 3rd dimension, creating a 'layer' on top of our 2d page for the modal popup */
+    z-index: -1;
+    opacity: 0;
+    transition: opacity 0.2s;
+}
+.modal-background {
+    position: fixed;
+    margin: 0;
+    padding: 0;
+    left: 0;
+    top: 0;
+    /* make it full viewport height and width */
+    height: 100vh;
+    width: 100vw;
+    background-color: rgba(0, 0, 0, 0.5);
+}
+.modal {
+    width: 100vw;
+    height: 100vh;
+    background-color: white;
+    display: flex;
+    flex-flow: column;
+}
+.modal-header, .modal-body, .modal-footer {
+    border: 1px solid #666;
+    border-top: 1px;
+    border-left: 1px;
+    border-right: 1px;
+    padding: 20px;
+}
+.modal-body {
+    /* make the body flex the fullest height possible */
+    flex: 1 1 auto;
+}
+.btn {
+    border-radius: 5px;
+    padding: 10px;
+    font-weight: bold;
+    border: 0;
+    cursor: pointer;
+    color: white;
+}
+.btn.danger {
+    background-color: #1f2b57;
+    border: 1px solid #1f2b57;
 }

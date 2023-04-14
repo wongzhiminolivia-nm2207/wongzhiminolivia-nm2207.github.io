@@ -42,20 +42,36 @@ const pieChart = new Chart(pie, {
   }
 });
 
-const senti = document.getElementById('histogram').getContext('2d');
+// BAR FOR SENTIMENTS BY EP //
 
-const chart = new Chart(senti, {
+const senti = document.getElementById('senti-bar').getContext('2d');
+
+const sentichart = new Chart(senti, {
   type: 'bar',
   data: {
-    labels: [0, 1, 2, 3, 4],
+    labels: ['S1E1', 'S1E2', 'S1E3', 'S1E4', 'S1E5', 'S1E6', 'S1E7', 'S1E8', 'S1E9',
+      'S1E10', 'S1E11', 'S1E12', 'S2E1', 'S2E2', 'S2E3', 'S2E4', 'S2E5', 'S2E6', 'S2E7', 'S2E8',
+      'S2E9', 'S2E10', 'S2E11', 'S2E12', 'S3E1', 'S3E2', 'S3E3', 'S3E4', 'S3E5', 'S3E6', 'S3E7',
+      'S3E8', 'S3E9', 'S3E10', 'S3E11', 'S4E1', 'S4E2', 'S4E3', 'S4E11', 'S4E12', 'S5E1', 'S5E2', 'S5E3', 'S5E4', 'S5E5', 'S5E6', 'S5E7',
+      'S5E8', 'S5E9', 'S5E10', 'S5E11', 'S5E12', 'S6E1', 'S6E2', 'S6E3', 'S6E4', 'S6E5', 'S6E6', 'S6E7',
+      'S6E8', 'S6E9', 'S6E10', 'S6E11', 'S6E12', 'S6E13', 'S6E14', 'S6E15', 'S6E16'],
     datasets: [{
-      label: 'Sentiment of Bojack Horseman',
-      data: [19, 28, 20, 16],
-      backgroundColor: 'green',
+      label: 'Sentiment',
+      data: ['0.0612', '0.103', '0.075', '0.096', '0.082', '0.096', '0.095', '0.091', '0.139', '0.108',
+        '0.122', '0.147', '0.105', '0.057', '0.067', '0.128', '0.13', '0.086', '0.065', '0.1', '0.073', '0.086',
+        '0.1', '0.109', '0.112', '0.119', '0.046', '-0.034', '0.177', '0.075', '0.048', '0.12', '0.084', '0.099',
+        '0.034', '0.145', '0.067', '0.135', '0.122', '0.081', '0.101', '0.139', '0.082', '0.07', '0.11', '0.074',
+        '0.073', '0.129', '0.103', '0.085', '-0.001', '0.06', '0.025', '0.131', '0.079', '0.035', '0.112', '0.104',
+        '0.096', '0.106', '0.092', '0.043', '0.1', '0.053', '0.086', '0.05', '0.108', '0.08'],
+      backgroundColor: '#BE833C',
     }]
   },
   options: {
     maintainAspectRatio: false,
+    //animation: false,
+    legend: {
+      position: "bottom",
+    },
     scales: {
       xAxes: [{
         display: false,
@@ -64,6 +80,122 @@ const chart = new Chart(senti, {
           labelString: 'test',
         },
         //barPercentage: 1.3,
+        ticks: {
+          max: 3,
+          color: '#DC4423',
+        }
+      }, {
+        display: true,
+        ticks: {
+          autoSkip: false,
+          max: 4,
+        }
+      }],
+      yAxes: [{
+        display: true,
+        ticks: {
+          beginAtZero: true
+        }
+      }]
+    }
+  }
+})
+
+
+// bar modal for senti bar
+// code sources for bar modal event: 
+////https://www.youtube.com/watch?v=x1WZZWYUmTA,
+////https://stackoverflow.com/questions/54275079/how-can-i-launch-a-modal-after-clicking-each-bar-in-bar-chart-in-chartjs-and-als,
+////chatgpt (initial prompt: 'how to launch a modal after clicking a specific bar in Bar chart in Chartjs' + follow up prompts to fix errors)
+const barModal = document.getElementById('barModal');
+
+function modalClose() {
+  barModal.classList.toggle('hide')
+}
+
+/*function modalOpen(click) {
+  // feed click as argument to get information in console about location of click
+  //console.log(click)
+  // rather than triggering function when any part of the canvas is clicked,
+  // pinpoint the bar that should be clicked
+  const points = sentichart.getElementsAtEventForMode(click, 'nearest', {
+    intersect: true}, true);
+  //console.log(points)
+  // if statement prevents errors
+  // clicking on whitespace would produce no arrays, which might throw errors
+  if(points[0]) {
+    console.log(points[0])
+    //const dataset = points[0].datasetIndex
+    //const datapoint = points[0].index;
+    // extract the value of the datapoint from chart
+    //console.log(sentichart.data.labels[datapoint]);
+    //barModal.classList.toggle('hide')
+
+    /*const labels = document.querySelectorAll('.label');
+    console.log(labels);
+    labels.forEach(label => {
+      label.innerText = sentichart.data.labels[datapoint];
+    }) */
+//barModal.classList.toggle('hide');
+//}
+//}
+
+sentichart.canvas.addEventListener('click', function (evt) {
+  const activeBars = sentichart.getElementsAtEventForMode(evt, 'nearest', { intersect: true }, true);
+  if (activeBars.length > 0) {
+    // get index of the clicked bar
+    //const clickedLabel = sentichart.data.labels[activeBars[0].index];
+    const clickedIndex = activeBars[0]._index;
+    console.log(clickedIndex);
+    if (clickedIndex === 27) {
+      modalClose();
+    }
+  }
+});
+
+// triger onclick event for the bar chart
+// onClick could not work, use addEventListener instead
+// senti.onClick = modalOpen; 
+// get element from DOM instead of adding straight to the function
+//document.getElementById('senti-bar').addEventListener('click', modalOpen)
+
+
+
+
+// BAR FOR RATINGS BY EP//
+const rating = document.getElementById('rating-bar').getContext('2d');
+
+const ratingchart = new Chart(rating, {
+  type: 'bar',
+  data: {
+    labels: ['S1E1', 'S1E2', 'S1E3', 'S1E4', 'S1E5', 'S1E6', 'S1E7', 'S1E8', 'S1E9',
+      'S1E10', 'S1E11', 'S1E12', 'S2E1', 'S2E2', 'S2E3', 'S2E4', 'S2E5', 'S2E6', 'S2E7', 'S2E8',
+      'S2E9', 'S2E10', 'S2E11', 'S2E12', 'S3E1', 'S3E2', 'S3E3', 'S3E4', 'S3E5', 'S3E6', 'S3E7',
+      'S3E8', 'S3E9', 'S3E10', 'S3E11', 'S4E1', 'S4E2', 'S4E3', 'S4E11', 'S4E12', 'S5E1', 'S5E2', 'S5E3', 'S5E4', 'S5E5', 'S5E6', 'S5E7',
+      'S5E8', 'S5E9', 'S5E10', 'S5E11', 'S5E12', 'S6E1', 'S6E2', 'S6E3', 'S6E4', 'S6E5', 'S6E6', 'S6E7',
+      'S6E8', 'S6E9', 'S6E10', 'S6E11', 'S6E12', 'S6E13', 'S6E14', 'S6E15', 'S6E16'],
+    datasets: [{
+      label: 'Rating',
+      data: [7.1, 7.6, 7.3, 7.4, 7.4, 7.8, 7.9, 8.5, 7.8, 7.6, 9.1, 8.3, 7.1, 8, 7.8, 7.9, 7.8, 7.6, 8.2, 8.8,
+        8.2, 8.4, 9.3, 8.5, 7.8, 8, 7.4, 9.6, 8.1, 8.1, 8.3, 7.8, 8.5, 8.7, 9.6, 7.6, 9.3, 8.4, 9.8, 8.9, 8, 9, 8, 8.1, 8.4, 9.8, 8.8, 8.5, 8.2, 8.9, 9.6, 9, 9, 8.5, 8, 9, 8,
+        8.1, 9.3, 8.5, 8.3, 8.9, 8.6, 9.2, 8.6, 8.9, 9.9, 9.5],
+      backgroundColor: '#8F5918',
+      barPercentage: 0.0005,
+    }]
+  },
+  options: {
+    maintainAspectRatio: false,
+    legend: {
+      position: "bottom",
+    },
+    scales: {
+      xAxes: [{
+        display: false,
+        scaleLabel: {
+          display: true,
+          labelString: 'test',
+        },
+        //barPercentage: 1.1,
         ticks: {
           max: 3,
           color: 'green',
@@ -84,10 +216,12 @@ const chart = new Chart(senti, {
     }
   }
 });
+
+
 /*/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 // testing fetch
 const data = fetch(
-  "..\data\bojackhorsemansentiments.csv"
+  "https://2207-resources.s3.ap-southeast-1.amazonaws.com/bojackhorsemansentiments.csv"
 )
   .then(function (response) {
     return response.text();
