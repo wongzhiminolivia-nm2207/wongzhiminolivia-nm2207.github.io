@@ -228,12 +228,14 @@ p {
     opacity: 100;
     transition: opacity 0.2s;
 }
+
 #barModal.hide {
     /* z-index is the 3rd dimension, creating a 'layer' on top of our 2d page for the modal popup */
     z-index: -1;
     opacity: 0;
     transition: opacity 0.2s;
 }
+
 .modal-background {
     position: fixed;
     margin: 0;
@@ -245,6 +247,7 @@ p {
     width: 100vw;
     background-color: rgba(0, 0, 0, 0.5);
 }
+
 .modal {
     width: 100vw;
     height: 100vh;
@@ -252,17 +255,22 @@ p {
     display: flex;
     flex-flow: column;
 }
-.modal-header, .modal-body, .modal-footer {
+
+.modal-header,
+.modal-body,
+.modal-footer {
     border: 1px solid #666;
     border-top: 1px;
     border-left: 1px;
     border-right: 1px;
     padding: 20px;
 }
+
 .modal-body {
     /* make the body flex the fullest height possible */
     flex: 1 1 auto;
 }
+
 .btn {
     border-radius: 5px;
     padding: 10px;
@@ -271,7 +279,54 @@ p {
     cursor: pointer;
     color: white;
 }
+
 .btn.danger {
     background-color: #1f2b57;
     border: 1px solid #1f2b57;
+}
+
+/* charts */
+/* reduce size of charts, make responsive, source: https://www.chartjs.org/docs/latest/configuration/responsive.html 
+position to center, source: https://stackoverflow.com/questions/65736561/how-to-move-a-chart-js-to-the-center */
+.chartjs {
+    position: relative;
+    height: 40vh;
+    width: 80vw;
+    display: block;
+    margin: 0 auto;
+}
+
+/* range slider for chart */
+.slider {
+    border-radius: 5px;
+    background: #d3d3d3;
+    outline: none;
+    opacity: 0.7;
+    -webkit-transition: .2s;
+    transition: opacity .2s;
+    width: 150px;
+    display: block;
+    margin: 0 auto;
+}
+
+.slider:hover {
+    opacity: 1;
+}
+
+.slider::slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 25px;
+    height: 25px;
+    border-radius: 50%;
+    background: #04AA6D;
+    cursor: pointer;
+}
+
+.slider::range-thumb {
+    width: 25px;
+    height: 25px;
+    border-radius: 50%;
+    background: #04AA6D;
+    cursor: pointer;
 }

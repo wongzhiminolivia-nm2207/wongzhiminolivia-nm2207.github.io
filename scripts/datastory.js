@@ -46,23 +46,25 @@ const pieChart = new Chart(pie, {
 
 const senti = document.getElementById('senti-bar').getContext('2d');
 
+const labels = ['S1E1', 'S1E2', 'S1E3', 'S1E4', 'S1E5', 'S1E6', 'S1E7', 'S1E8', 'S1E9',
+'S1E10', 'S1E11', 'S1E12', 'S2E1', 'S2E2', 'S2E3', 'S2E4', 'S2E5', 'S2E6', 'S2E7', 'S2E8',
+'S2E9', 'S2E10', 'S2E11', 'S2E12', 'S3E1', 'S3E2', 'S3E3', 'S3E4', 'S3E5', 'S3E6', 'S3E7',
+'S3E8', 'S3E9', 'S3E10', 'S3E11', 'S4E1', 'S4E2', 'S4E3', 'S4E11', 'S4E12', 'S5E1', 'S5E2', 'S5E3', 'S5E4', 'S5E5', 'S5E6', 'S5E7',
+'S5E8', 'S5E9', 'S5E10', 'S5E11', 'S5E12', 'S6E1', 'S6E2', 'S6E3', 'S6E4', 'S6E5', 'S6E6', 'S6E7',
+'S6E8', 'S6E9', 'S6E10', 'S6E11', 'S6E12', 'S6E13', 'S6E14', 'S6E15', 'S6E16']
+const datapoints = ['0.0612', '0.103', '0.075', '0.096', '0.082', '0.096', '0.095', '0.091', '0.139', '0.108',
+'0.122', '0.147', '0.105', '0.057', '0.067', '0.128', '0.13', '0.086', '0.065', '0.1', '0.073', '0.086',
+'0.1', '0.109', '0.112', '0.119', '0.046', '-0.034', '0.177', '0.075', '0.048', '0.12', '0.084', '0.099',
+'0.034', '0.145', '0.067', '0.135', '0.122', '0.081', '0.101', '0.139', '0.082', '0.07', '0.11', '0.074',
+'0.073', '0.129', '0.103', '0.085', '-0.001', '0.06', '0.025', '0.131', '0.079', '0.035', '0.112', '0.104',
+'0.096', '0.106', '0.092', '0.043', '0.1', '0.053', '0.086', '0.05', '0.108', '0.08']
 const sentichart = new Chart(senti, {
   type: 'bar',
   data: {
-    labels: ['S1E1', 'S1E2', 'S1E3', 'S1E4', 'S1E5', 'S1E6', 'S1E7', 'S1E8', 'S1E9',
-      'S1E10', 'S1E11', 'S1E12', 'S2E1', 'S2E2', 'S2E3', 'S2E4', 'S2E5', 'S2E6', 'S2E7', 'S2E8',
-      'S2E9', 'S2E10', 'S2E11', 'S2E12', 'S3E1', 'S3E2', 'S3E3', 'S3E4', 'S3E5', 'S3E6', 'S3E7',
-      'S3E8', 'S3E9', 'S3E10', 'S3E11', 'S4E1', 'S4E2', 'S4E3', 'S4E11', 'S4E12', 'S5E1', 'S5E2', 'S5E3', 'S5E4', 'S5E5', 'S5E6', 'S5E7',
-      'S5E8', 'S5E9', 'S5E10', 'S5E11', 'S5E12', 'S6E1', 'S6E2', 'S6E3', 'S6E4', 'S6E5', 'S6E6', 'S6E7',
-      'S6E8', 'S6E9', 'S6E10', 'S6E11', 'S6E12', 'S6E13', 'S6E14', 'S6E15', 'S6E16'],
+    labels: labels,
     datasets: [{
       label: 'Sentiment',
-      data: ['0.0612', '0.103', '0.075', '0.096', '0.082', '0.096', '0.095', '0.091', '0.139', '0.108',
-        '0.122', '0.147', '0.105', '0.057', '0.067', '0.128', '0.13', '0.086', '0.065', '0.1', '0.073', '0.086',
-        '0.1', '0.109', '0.112', '0.119', '0.046', '-0.034', '0.177', '0.075', '0.048', '0.12', '0.084', '0.099',
-        '0.034', '0.145', '0.067', '0.135', '0.122', '0.081', '0.101', '0.139', '0.082', '0.07', '0.11', '0.074',
-        '0.073', '0.129', '0.103', '0.085', '-0.001', '0.06', '0.025', '0.131', '0.079', '0.035', '0.112', '0.104',
-        '0.096', '0.106', '0.092', '0.043', '0.1', '0.053', '0.086', '0.05', '0.108', '0.08'],
+      data: datapoints,
       backgroundColor: '#BE833C',
     }]
   },
@@ -100,6 +102,21 @@ const sentichart = new Chart(senti, {
     }
   }
 })
+
+// slider update chart functions
+// partially followed https://www.youtube.com/watch?v=mIMauE-DodA with amendments
+const slider = document.getElementById('slider');
+
+slider.oninput = function(){
+  //console.log(slider.value);
+  // get every label at each point of range
+  //console.log(sentichart.data.labels)
+  const sliderValue = labels.slice(0, slider.value);
+  //console.log(sliderValue)
+  sentichart.data.labels = sliderValue;
+  sentichart.update();
+}
+
 
 
 // bar modal for senti bar

@@ -119,9 +119,10 @@
             (most extreme negative) and +1 (most extreme positive).</p>
         <p style="font-size:smaller;">Average compound sentiment score for episode = sum(compound sentiment score of
             line of dialogue)/total no. of lines of dialogue</p>
-        <div>
-            <canvas id="senti-bar" width="200" height="200"></canvas>
+        <div class="chartjs">
+            <canvas id="senti-bar"></canvas>
         </div>
+        <input type="range" id="slider" min="5" max="68" value="68" class="slider">
         <p>After calculating averages, the compound scores are of a low positive value. With
             one exception:
             <b>S3E4</b>.</p>
@@ -149,8 +150,8 @@
         <h2>User ratings across episodes</h2>
         <p>Data for ratings were sourced from <a href="https://www.imdb.com/title/tt3398228/episodes" class="wobble"
                 target="_blank" style="color: #2e2c38;">IMDB</a></p>
-        <div>
-            <canvas id="rating-bar" width="200" height="200"></canvas>
+        <div class="chartjs">
+            <canvas id="rating-bar"></canvas>
         </div>
     </section>
 
