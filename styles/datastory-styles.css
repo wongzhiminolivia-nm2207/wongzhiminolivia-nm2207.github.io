@@ -34,6 +34,7 @@ p {
     padding-left: 80px;
     padding-right: 80px;
     font-size: 16px;
+    line-height: 1.5em;
 }
 
 /* links with orange wave */
@@ -299,27 +300,25 @@ position to center, source: https://stackoverflow.com/questions/65736561/how-to-
 /* range slider for chart */
 .slider {
     border-radius: 5px;
-    background: #d3d3d3;
+    background: #ad5656;
     outline: none;
     opacity: 0.7;
     -webkit-transition: .2s;
     transition: opacity .2s;
     width: 150px;
-    display: block;
-    margin: 0 auto;
+    accent-color: #BE833C;
 }
 
 .slider:hover {
     opacity: 1;
 }
 
-.slider::slider-thumb {
-    -webkit-appearance: none;
-    appearance: none;
+.slider::-webkit-slider-thumb {
+    /*-webkit-appearance: none;
+    appearance: none;*/
     width: 25px;
     height: 25px;
     border-radius: 50%;
-    background: #04AA6D;
     cursor: pointer;
 }
 
@@ -327,6 +326,87 @@ position to center, source: https://stackoverflow.com/questions/65736561/how-to-
     width: 25px;
     height: 25px;
     border-radius: 50%;
-    background: #04AA6D;
+    cursor: pointer;
+    background:#2f5eb2;
+}
+
+/* range-slider div for all sliders*/
+.range-slider {
+    display: flex;
+    margin: 0 auto;
+    gap: 10px;
+    /*align-items: center;
+    justify-content: center;*/
+    border: 2px solid #e7d6c0;
+    width: fit-content;
+    width: -webkit-fit-content;
+    border-radius: 25px;
+    padding-right: 10px;
+    padding-left: 10px;
+    background: #e7d6c0;
+}
+
+/* range slider for ratings bar */
+
+.rangeSlider {
+    border-radius: 5px;
+    outline: none;
+    opacity: 0.7;
+    -webkit-transition: .2s;
+    transition: opacity .2s;
+    width: 150px;
+    accent-color: #8F5918;
+}
+
+.rangeSlider:hover {
+    opacity: 1;
+}
+
+.rangeSlider::-webkit-slider-thumb {
+    /*-webkit-appearance: none;
+    appearance: none;*/
+    width: 25px;
+    height: 25px;
+    border-radius: 50%;
     cursor: pointer;
 }
+
+.rangeSlider::range-thumb {
+    width: 25px;
+    height: 25px;
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+/* 3rd range slider for ratings bar */
+
+.rangeSlider2 {
+    border-radius: 5px;
+    outline: none;
+    opacity: 0.7;
+    -webkit-transition: .2s;
+    transition: opacity .2s;
+    width: 150px;
+    accent-color: #9ecae6;
+}
+
+.rangeSlider2:hover {
+    opacity: 1;
+}
+
+.rangeSlider2::-webkit-slider-thumb {
+    /*-webkit-appearance: none;
+    appearance: none;*/
+    width: 25px;
+    height: 25px;
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+.rangeSlider2::range-thumb {
+    width: 25px;
+    height: 25px;
+    border-radius: 50%;
+    cursor: pointer;
+}
+

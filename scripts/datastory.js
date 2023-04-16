@@ -1,7 +1,5 @@
 
-
-
-// PIE
+// PIE //
 
 const pie = document.getElementById('pie').getContext('2d');
 
@@ -47,17 +45,17 @@ const pieChart = new Chart(pie, {
 const senti = document.getElementById('senti-bar').getContext('2d');
 
 const labels = ['S1E1', 'S1E2', 'S1E3', 'S1E4', 'S1E5', 'S1E6', 'S1E7', 'S1E8', 'S1E9',
-'S1E10', 'S1E11', 'S1E12', 'S2E1', 'S2E2', 'S2E3', 'S2E4', 'S2E5', 'S2E6', 'S2E7', 'S2E8',
-'S2E9', 'S2E10', 'S2E11', 'S2E12', 'S3E1', 'S3E2', 'S3E3', 'S3E4', 'S3E5', 'S3E6', 'S3E7',
-'S3E8', 'S3E9', 'S3E10', 'S3E11', 'S4E1', 'S4E2', 'S4E3', 'S4E11', 'S4E12', 'S5E1', 'S5E2', 'S5E3', 'S5E4', 'S5E5', 'S5E6', 'S5E7',
-'S5E8', 'S5E9', 'S5E10', 'S5E11', 'S5E12', 'S6E1', 'S6E2', 'S6E3', 'S6E4', 'S6E5', 'S6E6', 'S6E7',
-'S6E8', 'S6E9', 'S6E10', 'S6E11', 'S6E12', 'S6E13', 'S6E14', 'S6E15', 'S6E16']
+  'S1E10', 'S1E11', 'S1E12', 'S2E1', 'S2E2', 'S2E3', 'S2E4', 'S2E5', 'S2E6', 'S2E7', 'S2E8',
+  'S2E9', 'S2E10', 'S2E11', 'S2E12', 'S3E1', 'S3E2', 'S3E3', 'S3E4', 'S3E5', 'S3E6', 'S3E7',
+  'S3E8', 'S3E9', 'S3E10', 'S3E11', 'S4E1', 'S4E2', 'S4E3', 'S4E11', 'S4E12', 'S5E1', 'S5E2', 'S5E3', 'S5E4', 'S5E5', 'S5E6', 'S5E7',
+  'S5E8', 'S5E9', 'S5E10', 'S5E11', 'S5E12', 'S6E1', 'S6E2', 'S6E3', 'S6E4', 'S6E5', 'S6E6', 'S6E7',
+  'S6E8', 'S6E9', 'S6E10', 'S6E11', 'S6E12', 'S6E13', 'S6E14', 'S6E15', 'S6E16']
 const datapoints = ['0.0612', '0.103', '0.075', '0.096', '0.082', '0.096', '0.095', '0.091', '0.139', '0.108',
-'0.122', '0.147', '0.105', '0.057', '0.067', '0.128', '0.13', '0.086', '0.065', '0.1', '0.073', '0.086',
-'0.1', '0.109', '0.112', '0.119', '0.046', '-0.034', '0.177', '0.075', '0.048', '0.12', '0.084', '0.099',
-'0.034', '0.145', '0.067', '0.135', '0.122', '0.081', '0.101', '0.139', '0.082', '0.07', '0.11', '0.074',
-'0.073', '0.129', '0.103', '0.085', '-0.001', '0.06', '0.025', '0.131', '0.079', '0.035', '0.112', '0.104',
-'0.096', '0.106', '0.092', '0.043', '0.1', '0.053', '0.086', '0.05', '0.108', '0.08']
+  '0.122', '0.147', '0.105', '0.057', '0.067', '0.128', '0.13', '0.086', '0.065', '0.1', '0.073', '0.086',
+  '0.1', '0.109', '0.112', '0.119', '0.046', '-0.034', '0.177', '0.075', '0.048', '0.12', '0.084', '0.099',
+  '0.034', '0.145', '0.067', '0.135', '0.122', '0.081', '0.101', '0.139', '0.082', '0.07', '0.11', '0.074',
+  '0.073', '0.129', '0.103', '0.085', '-0.001', '0.06', '0.025', '0.131', '0.079', '0.035', '0.112', '0.104',
+  '0.096', '0.106', '0.092', '0.043', '0.1', '0.053', '0.086', '0.05', '0.108', '0.08']
 const sentichart = new Chart(senti, {
   type: 'bar',
   data: {
@@ -103,11 +101,11 @@ const sentichart = new Chart(senti, {
   }
 })
 
-// slider update chart functions
+// RANGE SLIDER TO UPDATE SENTI CHART //
 // partially followed https://www.youtube.com/watch?v=mIMauE-DodA with amendments
 const slider = document.getElementById('slider');
 
-slider.oninput = function(){
+slider.oninput = function () {
   //console.log(slider.value);
   // get every label at each point of range
   //console.log(sentichart.data.labels)
@@ -119,7 +117,7 @@ slider.oninput = function(){
 
 
 
-// bar modal for senti bar
+// BAR MODAL FOR SENTI CHART //
 // code sources for bar modal event: 
 ////https://www.youtube.com/watch?v=x1WZZWYUmTA,
 ////https://stackoverflow.com/questions/54275079/how-can-i-launch-a-modal-after-clicking-each-bar-in-bar-chart-in-chartjs-and-als,
@@ -157,6 +155,7 @@ function modalClose() {
 //}
 //}
 
+
 sentichart.canvas.addEventListener('click', function (evt) {
   const activeBars = sentichart.getElementsAtEventForMode(evt, 'nearest', { intersect: true }, true);
   if (activeBars.length > 0) {
@@ -170,11 +169,6 @@ sentichart.canvas.addEventListener('click', function (evt) {
   }
 });
 
-// triger onclick event for the bar chart
-// onClick could not work, use addEventListener instead
-// senti.onClick = modalOpen; 
-// get element from DOM instead of adding straight to the function
-//document.getElementById('senti-bar').addEventListener('click', modalOpen)
 
 
 
@@ -182,20 +176,23 @@ sentichart.canvas.addEventListener('click', function (evt) {
 // BAR FOR RATINGS BY EP//
 const rating = document.getElementById('rating-bar').getContext('2d');
 
+const ratingLabels = ['S1E1', 'S1E2', 'S1E3', 'S1E4', 'S1E5', 'S1E6', 'S1E7', 'S1E8', 'S1E9',
+  'S1E10', 'S1E11', 'S1E12', 'S2E1', 'S2E2', 'S2E3', 'S2E4', 'S2E5', 'S2E6', 'S2E7', 'S2E8',
+  'S2E9', 'S2E10', 'S2E11', 'S2E12', 'S3E1', 'S3E2', 'S3E3', 'S3E4', 'S3E5', 'S3E6', 'S3E7',
+  'S3E8', 'S3E9', 'S3E10', 'S3E11', 'S4E1', 'S4E2', 'S4E3', 'S4E11', 'S4E12', 'S5E1', 'S5E2', 'S5E3', 'S5E4', 'S5E5', 'S5E6', 'S5E7',
+  'S5E8', 'S5E9', 'S5E10', 'S5E11', 'S5E12', 'S6E1', 'S6E2', 'S6E3', 'S6E4', 'S6E5', 'S6E6', 'S6E7',
+  'S6E8', 'S6E9', 'S6E10', 'S6E11', 'S6E12', 'S6E13', 'S6E14', 'S6E15', 'S6E16']
+const ratingData = [7.1, 7.6, 7.3, 7.4, 7.4, 7.8, 7.9, 8.5, 7.8, 7.6, 9.1, 8.3, 7.1, 8, 7.8, 7.9, 7.8, 7.6, 8.2, 8.8,
+  8.2, 8.4, 9.3, 8.5, 7.8, 8, 7.4, 9.6, 8.1, 8.1, 8.3, 7.8, 8.5, 8.7, 9.6, 7.6, 9.3, 8.4, 9.8, 8.9, 8, 9, 8, 8.1, 8.4, 9.8, 8.8, 8.5, 8.2, 8.9, 9.6, 9, 9, 8.5, 8, 9, 8,
+  8.1, 9.3, 8.5, 8.3, 8.9, 8.6, 9.2, 8.6, 8.9, 9.9, 9.5]
+
 const ratingchart = new Chart(rating, {
   type: 'bar',
   data: {
-    labels: ['S1E1', 'S1E2', 'S1E3', 'S1E4', 'S1E5', 'S1E6', 'S1E7', 'S1E8', 'S1E9',
-      'S1E10', 'S1E11', 'S1E12', 'S2E1', 'S2E2', 'S2E3', 'S2E4', 'S2E5', 'S2E6', 'S2E7', 'S2E8',
-      'S2E9', 'S2E10', 'S2E11', 'S2E12', 'S3E1', 'S3E2', 'S3E3', 'S3E4', 'S3E5', 'S3E6', 'S3E7',
-      'S3E8', 'S3E9', 'S3E10', 'S3E11', 'S4E1', 'S4E2', 'S4E3', 'S4E11', 'S4E12', 'S5E1', 'S5E2', 'S5E3', 'S5E4', 'S5E5', 'S5E6', 'S5E7',
-      'S5E8', 'S5E9', 'S5E10', 'S5E11', 'S5E12', 'S6E1', 'S6E2', 'S6E3', 'S6E4', 'S6E5', 'S6E6', 'S6E7',
-      'S6E8', 'S6E9', 'S6E10', 'S6E11', 'S6E12', 'S6E13', 'S6E14', 'S6E15', 'S6E16'],
+    labels: ratingLabels,
     datasets: [{
       label: 'Rating',
-      data: [7.1, 7.6, 7.3, 7.4, 7.4, 7.8, 7.9, 8.5, 7.8, 7.6, 9.1, 8.3, 7.1, 8, 7.8, 7.9, 7.8, 7.6, 8.2, 8.8,
-        8.2, 8.4, 9.3, 8.5, 7.8, 8, 7.4, 9.6, 8.1, 8.1, 8.3, 7.8, 8.5, 8.7, 9.6, 7.6, 9.3, 8.4, 9.8, 8.9, 8, 9, 8, 8.1, 8.4, 9.8, 8.8, 8.5, 8.2, 8.9, 9.6, 9, 9, 8.5, 8, 9, 8,
-        8.1, 9.3, 8.5, 8.3, 8.9, 8.6, 9.2, 8.6, 8.9, 9.9, 9.5],
+      data: ratingData,
       backgroundColor: '#8F5918',
       barPercentage: 0.0005,
     }]
@@ -234,8 +231,107 @@ const ratingchart = new Chart(rating, {
   }
 });
 
+// RANGE SLIDER TO UPDATE RATINGS CHART //
+const ratingSlider = document.getElementById('rating-slider');
 
-/*/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+ratingSlider.oninput = function () {
+  //console.log(slider.value);
+  // get every label at each point of range
+  //console.log(sentichart.data.labels)
+  const sliderValue = labels.slice(0, ratingSlider.value);
+  //console.log(sliderValue)
+  ratingchart.data.labels = sliderValue;
+  ratingchart.update();
+}
+
+
+
+
+
+// SECOND BAR FOR RATINGS BY EP//
+const rating2 = document.getElementById('rating-bar2').getContext('2d');
+
+const ratingLabels2 = ['S1E1', 'S1E2', 'S1E3', 'S1E4', 'S1E5', 'S1E6', 'S1E7', 'S1E8', 'S1E9',
+  'S1E10', 'S1E11', 'S1E12', 'S2E1', 'S2E2', 'S2E3', 'S2E4', 'S2E5', 'S2E6', 'S2E7', 'S2E8',
+  'S2E9', 'S2E10', 'S2E11', 'S2E12', 'S3E1', 'S3E2', 'S3E3', 'S3E4', 'S3E5', 'S3E6', 'S3E7',
+  'S3E8', 'S3E9', 'S3E10', 'S3E11', 'S4E1', 'S4E2', 'S4E3', 'S4E11', 'S4E12', 'S5E1', 'S5E2', 'S5E3', 'S5E4', 'S5E5', 'S5E6', 'S5E7',
+  'S5E8', 'S5E9', 'S5E10', 'S5E11', 'S5E12', 'S6E1', 'S6E2', 'S6E3', 'S6E4', 'S6E5', 'S6E6', 'S6E7',
+  'S6E8', 'S6E9', 'S6E10', 'S6E11', 'S6E12', 'S6E13', 'S6E14', 'S6E15', 'S6E16']
+const ratingData2 = [7.1, 7.6, 7.3, 7.4, 7.4, 7.8, 7.9, 8.5, 7.8, 7.6, 9.1, 8.3, 7.1, 8, 7.8, 7.9, 7.8, 7.6, 8.2, 8.8,
+  8.2, 8.4, 9.3, 8.5, 7.8, 8, 7.4, 9.6, 8.1, 8.1, 8.3, 7.8, 8.5, 8.7, 9.6, 7.6, 9.3, 8.4, 9.8, 8.9, 8, 9, 8, 8.1, 8.4, 9.8, 8.8, 8.5, 8.2, 8.9, 9.6, 9, 9, 8.5, 8, 9, 8,
+  8.1, 9.3, 8.5, 8.3, 8.9, 8.6, 9.2, 8.6, 8.9, 9.9, 9.5]
+
+const ratingchart2 = new Chart(rating2, {
+
+  data: {
+    labels: ratingLabels2,
+    datasets: [{
+      type: 'bar',
+      label: 'Rating',
+      data: ratingData2,
+      backgroundColor: '#9ecae6',
+      barPercentage: 0.0005,
+      borderColor: 'rgb(255, 99, 132)',
+    },
+    {
+      type: 'line',
+      label: 'Sentiment',
+      data: datapoints,
+      color: '#0d324a',
+      fill: false,
+    }]
+  },
+  options: {
+    maintainAspectRatio: false,
+    legend: {
+      position: "bottom",
+    },
+    scales: {
+      xAxes: [{
+        display: false,
+        scaleLabel: {
+          display: true,
+          labelString: 'test',
+        },
+        //barPercentage: 1.1,
+        ticks: {
+          max: 3,
+        }
+      }, {
+        display: true,
+        ticks: {
+          autoSkip: false,
+          max: 4,
+        }
+      }],
+      yAxes: [{
+        display: true,
+        ticks: {
+          beginAtZero: true
+        }
+      }]
+    }
+  }
+});
+
+// RANGE SLIDER TO UPDATE RATINGS CHART //
+const ratingSlider2 = document.getElementById('rating-slider2');
+
+ratingSlider2.oninput = function () {
+  //console.log(slider.value);
+  // get every label at each point of range
+  //console.log(sentichart.data.labels)
+  const sliderValue = labels.slice(0, ratingSlider2.value);
+  //console.log(sliderValue)
+  ratingchart2.data.labels = sliderValue;
+  ratingchart2.update();
+}
+
+
+
+
+
+/* DUMP /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 // testing fetch
 const data = fetch(
   "https://2207-resources.s3.ap-southeast-1.amazonaws.com/bojackhorsemansentiments.csv"
