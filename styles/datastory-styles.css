@@ -327,7 +327,7 @@ position to center, source: https://stackoverflow.com/questions/65736561/how-to-
     height: 25px;
     border-radius: 50%;
     cursor: pointer;
-    background:#2f5eb2;
+    background: #2f5eb2;
 }
 
 /* range-slider div for all sliders*/
@@ -380,7 +380,7 @@ position to center, source: https://stackoverflow.com/questions/65736561/how-to-
 
 /* 3rd range slider for ratings bar */
 
-.rangeSlider2 {
+.rangeSlider3 {
     border-radius: 5px;
     outline: none;
     opacity: 0.7;
@@ -390,11 +390,11 @@ position to center, source: https://stackoverflow.com/questions/65736561/how-to-
     accent-color: #9ecae6;
 }
 
-.rangeSlider2:hover {
+.rangeSlider3:hover {
     opacity: 1;
 }
 
-.rangeSlider2::-webkit-slider-thumb {
+.rangeSlider3::-webkit-slider-thumb {
     /*-webkit-appearance: none;
     appearance: none;*/
     width: 25px;
@@ -403,10 +403,40 @@ position to center, source: https://stackoverflow.com/questions/65736561/how-to-
     cursor: pointer;
 }
 
-.rangeSlider2::range-thumb {
+.rangeSlider3::range-thumb {
     width: 25px;
     height: 25px;
     border-radius: 50%;
     cursor: pointer;
 }
 
+/* BUTTONS FOR CHART TYPE UPDATE */
+.buttoncontainer {
+    height: 50px;
+    position: relative;
+}
+.chartTypeButtons {
+    margin: 0;
+    position: absolute;
+    top: 50%;
+    left: 76%;
+    -ms-transform: translateX(-50%);
+    transform: translateX(-50%);
+}
+
+.comparebtn {
+    border-radius: 5px;
+    padding: 10px;
+    font-weight: bold;
+    border: 0;
+    cursor: pointer;
+    color: white;
+    text-align: center;
+    margin: auto;
+    vertical-align: middle;
+}
+
+.comparebtn.danger {
+    background-color: #5e7232;
+    border: 1px solid #5e7232;
+}

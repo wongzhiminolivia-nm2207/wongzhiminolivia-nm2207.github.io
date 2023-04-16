@@ -101,7 +101,10 @@ const sentichart = new Chart(senti, {
   }
 })
 
+//
+
 // RANGE SLIDER TO UPDATE SENTI CHART //
+
 // partially followed https://www.youtube.com/watch?v=mIMauE-DodA with amendments
 const slider = document.getElementById('slider');
 
@@ -115,9 +118,11 @@ slider.oninput = function () {
   sentichart.update();
 }
 
+//
 
 
 // BAR MODAL FOR SENTI CHART //
+
 // code sources for bar modal event: 
 ////https://www.youtube.com/watch?v=x1WZZWYUmTA,
 ////https://stackoverflow.com/questions/54275079/how-can-i-launch-a-modal-after-clicking-each-bar-in-bar-chart-in-chartjs-and-als,
@@ -169,7 +174,7 @@ sentichart.canvas.addEventListener('click', function (evt) {
   }
 });
 
-
+//
 
 
 
@@ -231,6 +236,8 @@ const ratingchart = new Chart(rating, {
   }
 });
 
+//
+
 // RANGE SLIDER TO UPDATE RATINGS CHART //
 const ratingSlider = document.getElementById('rating-slider');
 
@@ -244,7 +251,7 @@ ratingSlider.oninput = function () {
   ratingchart.update();
 }
 
-
+//
 
 
 
@@ -257,62 +264,85 @@ const ratingLabels2 = ['S1E1', 'S1E2', 'S1E3', 'S1E4', 'S1E5', 'S1E6', 'S1E7', '
   'S3E8', 'S3E9', 'S3E10', 'S3E11', 'S4E1', 'S4E2', 'S4E3', 'S4E11', 'S4E12', 'S5E1', 'S5E2', 'S5E3', 'S5E4', 'S5E5', 'S5E6', 'S5E7',
   'S5E8', 'S5E9', 'S5E10', 'S5E11', 'S5E12', 'S6E1', 'S6E2', 'S6E3', 'S6E4', 'S6E5', 'S6E6', 'S6E7',
   'S6E8', 'S6E9', 'S6E10', 'S6E11', 'S6E12', 'S6E13', 'S6E14', 'S6E15', 'S6E16']
-const ratingData2 = [7.1, 7.6, 7.3, 7.4, 7.4, 7.8, 7.9, 8.5, 7.8, 7.6, 9.1, 8.3, 7.1, 8, 7.8, 7.9, 7.8, 7.6, 8.2, 8.8,
-  8.2, 8.4, 9.3, 8.5, 7.8, 8, 7.4, 9.6, 8.1, 8.1, 8.3, 7.8, 8.5, 8.7, 9.6, 7.6, 9.3, 8.4, 9.8, 8.9, 8, 9, 8, 8.1, 8.4, 9.8, 8.8, 8.5, 8.2, 8.9, 9.6, 9, 9, 8.5, 8, 9, 8,
-  8.1, 9.3, 8.5, 8.3, 8.9, 8.6, 9.2, 8.6, 8.9, 9.9, 9.5]
-
-const ratingchart2 = new Chart(rating2, {
-
-  data: {
-    labels: ratingLabels2,
-    datasets: [{
-      type: 'bar',
-      label: 'Rating',
-      data: ratingData2,
-      backgroundColor: '#9ecae6',
-      barPercentage: 0.0005,
-      borderColor: 'rgb(255, 99, 132)',
-    },
-    {
-      type: 'line',
-      label: 'Sentiment',
-      data: datapoints,
-      color: '#0d324a',
-      fill: false,
+const ratingData2 = [1.42, 1.52, 1.46, 1.48, 1.48, 1.56, 1.58, 1.7, 1.56, 1.52, 1.82, 1.66, 1.42, 1.6, 1.56, 1.58, 1.56, 1.52, 1.64,
+  1.76, 1.64, 1.68, 1.86, 1.7, 1.56, 1.6, 1.48, 1.92, 1.62, 1.62, 1.66, 1.56, 1.7, 1.74, 1.92, 1.52, 1.86, 1.68, 1.96, 1.78, 1.6,
+  1.8, 1.6, 1.62, 1.68, 1.96, 1.76, 1.7, 1.64, 1.78, 1.92, 1.8, 1.8, 1.7, 1.6, 1.8, 1.6, 1.62, 1.86, 1.7, 1.66, 1.78, 1.72, 1.84,
+  1.72, 1.78, 1.98, 1.9]
+const sentiData2 = [1.0612, 1.103, 1.075, 1.096, 1.082, 1.096, 1.095, 1.091, 1.139, 1.108, 1.122, 1.147, 1.105, 1.057, 1.067, 1.128,
+  1.13, 1.086, 1.065, 1.1, 1.073, 1.086, 1.1, 1.109, 1.112, 1.119, 1.046, 0.966, 1.177, 1.075, 1.048, 1.12, 1.084, 1.099, 1.034, 1.145,
+  1.067, 1.135, 1.122, 1.081, 1.101, 1.139, 1.082, 1.07, 1.11, 1.074, 1.073, 1.129, 1.103, 1.085, 0.999, 1.06, 1.025, 1.131, 1.079,
+  1.035, 1.112, 1.104, 1.096, 1.106, 1.092, 1.043, 1.1, 1.053, 1.086, 1.05, 1.108, 1.08]
+const ratingchart2Data = {
+  labels: ratingLabels2,
+  datasets: [{
+    label: 'Rating',
+    data: ratingData2,
+    color: '#9ecae6',
+    backgroundColor: '#9ecae6',
+    borderColor: '#9ecae6',
+    fill: false,
+    tension: 0.4,
+    hoverBorderColor: 'green',
+    hoverBorderWidth: 5,
+  },
+  {
+    label: 'Sentiment',
+    data: sentiData2,
+    backgroundColor: '#366385',
+    borderColor: '#366385',
+    fill: false,
+    tension: 0.4,
+    hoverBorderColor: 'green'
+  }]
+}
+const ratingchart2Options = {
+  maintainAspectRatio: false,
+  legend: {
+    position: "bottom",
+  },
+  scales: {
+    xAxes: [{
+      display: false,
+      scaleLabel: {
+        display: false,
+        labelString: 'test',
+      },
+      //barPercentage: 1.1,
+      ticks: {
+        max: 3,
+        color: 'green',
+      }
+    }, {
+      display: true,
+      ticks: {
+        autoSkip: false,
+        max: 4,
+      }
+    }],
+    yAxes: [{
+      display: true,
+      ticks: {
+        beginAtZero: true
+      }
     }]
   },
-  options: {
-    maintainAspectRatio: false,
-    legend: {
-      position: "bottom",
-    },
-    scales: {
-      xAxes: [{
-        display: false,
-        scaleLabel: {
-          display: true,
-          labelString: 'test',
-        },
-        //barPercentage: 1.1,
-        ticks: {
-          max: 3,
-        }
-      }, {
-        display: true,
-        ticks: {
-          autoSkip: false,
-          max: 4,
-        }
-      }],
-      yAxes: [{
-        display: true,
-        ticks: {
-          beginAtZero: true
-        }
-      }]
+  hover: {
+    mode: 'index',
+    intersect: true,
+  },
+  elements: {
+    point: {
+      hitRadius: 10
     }
   }
+}
+let ratingchart2 = new Chart(rating2, {
+  type: 'line',
+  data: ratingchart2Data,
+  options: ratingchart2Options,
 });
+
+//
 
 // RANGE SLIDER TO UPDATE RATINGS CHART //
 const ratingSlider2 = document.getElementById('rating-slider2');
@@ -326,6 +356,176 @@ ratingSlider2.oninput = function () {
   ratingchart2.data.labels = sliderValue;
   ratingchart2.update();
 }
+
+//
+
+// UPDATE CHART TYPE //
+
+function updateChartType() {
+  ratingchart2.destroy();
+  ratingchart2 = new Chart(rating2, {
+    type: document.getElementById('chartType').value,
+    data: ratingchart2Data,
+    options: ratingchart2Options,
+  });
+}
+function updateChartType2() {
+  ratingchart2.destroy();
+  ratingchart2 = new Chart(rating2, {
+    type: document.getElementById('chartType2').value,
+    data: ratingchart2Data,
+    options: ratingchart2Options,
+  });
+}
+
+document.getElementById('chartType').addEventListener('click', updateChartType);
+document.getElementById('chartType2').addEventListener('click', updateChartType2);
+
+//
+
+
+// BAR COMPARING MR PEANUTBUTTER AND BOJACK //
+const compareBar = document.getElementById('compareBar').getContext('2d');
+
+const compareLabels = ['S1E1', 'S1E2', 'S1E3', 'S1E4', 'S1E5', 'S1E6', 'S1E9', 'S1E10', 'S1E12', 'S2E1', 'S2E2', 'S2E3', 'S2E4',
+  'S2E5', 'S2E6', 'S2E7', 'S2E8', 'S2E9', 'S2E10', 'S2E12', 'S3E1', 'S3E2', 'S3E3', 'S3E5', 'S3E6', 'S3E7', 'S3E8', 'S3E10', 'S4E3',
+  'S4E12', 'S5E1', 'S5E2', 'S5E3', 'S5E4', 'S5E5', 'S5E7', 'S5E8', 'S5E9', 'S5E10', 'S5E11', 'S5E12', 'S6E1', 'S6E2', 'S6E4', 'S6E5',
+  'S6E6', 'S6E7', 'S6E9', 'S6E10', 'S6E11', 'S6E12', 'S6E13', 'S6E14', 'S6E16']
+const bojackCompareData = [0.0317, 0.0392, 0.0843, 0.102, 0.162, 0.0332, 0.11, 0.106, 0.144, 0.114, 0.011, -0.00262, 0.134, 0.175, 0.0957, 0.107, 0.081, -0.00198, 0.0406, 0.0333, 0.103, 0.101, 0.0224, 0.144, 0.127, 0.0697, 0.0353, 0.0717, 0.123, 0.0157, -0.0315, 0.101, 0.0311, 0.127, -0.0216, 0.109, 0.0357, 0.0745, 0.0629, 0.00557, 0.0941, 0.0175, 0.194, 0.0422, 0.115, 0.162, 0.0822, 0.0831, 0.142, 0.0479, 0.0464, 0.0287, 0.0243, 0.0265]
+const butterCompareData = [0.166, 0.32, 0.467, 0.142, 0.445, 0.174, 0.218, 0.144, 0.193, 0.0316, 0.13, 0.345, 0.162, 0.0516, 0.295, 0.229, 0.117, -0.0716, 0.188, 0.232, 0.218, 0.233, 0.118, 0.245, 0.107, 0.0209, 0.0817, 0.186, 0.409, 0.156, 0.335, 0.263, 0.24, -0.0113, 0.233, -0.0154, 0.194, 0.118, 0.0757, 0.139, 0.0818, 0.102, 0.124, 0.0174, 0.193, -0.136, 0.0737, 0.27, 0.143, 0.152, 0.163, 0.108, 0.188, 0.16]
+const compareData = {
+  labels: compareLabels,
+  datasets: [{
+    label: 'BoJack',
+    data: bojackCompareData,
+    backgroundColor: '#c16643',
+    borderColor: '#c16643',
+  },
+  {
+    label: 'Mr. Peanutbutter',
+    data: butterCompareData,
+    backgroundColor: '#d1bd2e',
+    borderColor: '#d1bd2e',
+  }]
+}
+const compareOptions = {
+  maintainAspectRatio: false,
+  legend: {
+    position: "bottom",
+  },
+  scales: {
+    xAxes: [{
+      display: false,
+      scaleLabel: {
+        display: false,
+        labelString: 'test',
+      },
+      //barPercentage: 1.1,
+      ticks: {
+        max: 3,
+        color: 'green',
+      }
+    }, {
+      display: true,
+      ticks: {
+        autoSkip: false,
+        max: 4,
+      }
+    }],
+    yAxes: [{
+      display: true,
+      ticks: {
+        beginAtZero: true
+      }
+    }]
+  },
+}
+let compareChart = new Chart(compareBar, {
+  type: 'scatter',
+  data: compareData,
+  options: compareOptions,
+});
+
+// RANGE SLIDER FOR COMPARE CHART //
+const compareSlider = document.getElementById('rating-slider-compare');
+
+compareSlider.oninput = function () {
+  //console.log(slider.value);
+  // get every label at each point of range
+  //console.log(sentichart.data.labels)
+  const sliderValue = labels.slice(0, compareSlider.value);
+  //console.log(sliderValue)
+  compareChart.data.labels = sliderValue;
+  compareChart.update();
+}
+
+// UPDATE CHART TYPE //
+
+function updateCompareChartType() {
+  compareChart.destroy();
+  compareChart = new Chart(compareBar, {
+    type: document.getElementById('compareChartType').value,
+    data: compareData,
+    options: compareOptions,
+  });
+}
+function updateCompareChartType2() {
+  compareChart.destroy();
+  compareChart = new Chart(compareBar, {
+    type: document.getElementById('compareChartType2').value,
+    data: {
+      labels: compareLabels,
+      datasets: [{
+        label: 'BoJack',
+        data: bojackCompareData,
+        backgroundColor: '#c16643',
+        borderColor: '#c16643',
+        fill: false,
+      },
+      {
+        label: 'Mr. Peanutbutter',
+        data: butterCompareData,
+        backgroundColor: '#d1bd2e',
+        borderColor: '#d1bd2e',
+        fill: false,
+      }]
+    },
+    options: compareOptions,
+  });
+}
+function updateCompareChartType3() {
+  compareChart.destroy();
+  compareChart = new Chart(compareBar, {
+    type: document.getElementById('compareChartType3').value,
+    data: compareData,
+    options: compareOptions,
+  });
+}
+
+document.getElementById('compareChartType').addEventListener('click', updateCompareChartType);
+document.getElementById('compareChartType2').addEventListener('click', updateCompareChartType2);
+document.getElementById('compareChartType3').addEventListener('click', updateCompareChartType3);
+
+
+
+// SCATTER PLOT //
+
+/*fetch('https://2207-resources.s3.ap-southeast-1.amazonaws.com/bojackhorsemansentiments.csv')
+  .then(response => response.json())
+  .then(data => {
+    const specificValue = 'S1E1'; // Specify the specific value you want to filter by
+    const filteredData = data.filter(row => row[0] === specificValue);
+    //console.log('Filtered data:', filteredData);
+    // Process the filtered data
+
+    const specificColumnData = filteredData.map(row => row[5]); // Specify the column index you want to extract data from
+    console.log('Specific column data:', specificColumnData);
+    // Process the specific column data
+  })
+  .catch(error => {
+    console.error('Error fetching data:', error);
+  }); */
+// tried this out and got Error fetching data: SyntaxError: Unexpected token ',', ",FALSE,Nam"... is not valid JSON
 
 
 

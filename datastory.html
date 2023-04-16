@@ -111,15 +111,17 @@
             <br>
             <canvas id="pie" width="100" height="100"></canvas>
             <br>
-            <p style="text-align:center;">'Other characters' are either secondary or side characters that each have
+            <p style="padding-left:250px;padding-right:250px">'Other characters' are either secondary or side characters
+                that each have
                 lesser dialogue than any of the main characters.</p>
-            <p style="text-align:center;">Hence, we observe that the main protagonist, <a
+            <p style="padding-left:250px;padding-right:250px">Hence, we observe that the main protagonist, <a
                     href="https://www.thedailystar.net/shout/news/why-relating-bojack-doesnt-make-you-special-1750717"
                     target="_blank" class="wobble">BoJack
                     Horseman</a>, accounts for majority of the
                 dialogue throughout the series.
             </p>
         </div>
+        <br>
     </section>
 
     <section class="light-container">
@@ -176,7 +178,7 @@
             <input type="range" id="rating-slider" min="5" max="68" value="68" class="rangeSlider">
         </div>
         <br>
-        
+
     </section>
 
     <section class="dark-container">
@@ -184,12 +186,14 @@
             <canvas id="scatter"></canvas>
         </div>-->
         <br>
-        <div style="text-align:center">
+        <div>
             <h2 style="text-align:center;">Possible association!</h2>
-            <p style="text-align:center;">There is a <b>negative correlation</b> between ratings per episode of the
+            <p style="padding-left:200px;padding-right:200px">There is a <b>negative correlation</b> between ratings per
+                episode of the
                 <em>BoJack Horseman</em> TV series
-                and the average compound sentiment scores per episode.</p>
-            <h2 style="font-size:smaller" style="text-align:center;"> (Pearson) Correlation coefficient = -0.302 (3sf)
+                and the average compound sentiment scores per episode.
+            </p>
+            <h2 style="text-align:center;font-size:smaller"> (Pearson) Correlation coefficient = -0.302 (3sf)
             </h2><br>
             <img src="resources/bojack911.gif" style="width:40%;padding-left:80px;padding-right:80px;display: block;
         margin: 0 auto;">
@@ -198,17 +202,140 @@
     </section>
 
     <section class="light-container">
-        <h2>Let's take a look at the data again...but together this time</h2>
+        <h2>The same data at a glance... but all together this time</h2>
+        <div class="buttoncontainer">
+            <div class="chartTypeButtons" style="left:80%">
+                <button id="chartType" value="scatter" class="btn danger">Scatter Chart</button>
+                <button id="chartType2" value="line" class="btn danger">Line Chart</button>
+            </div>
+        </div>
+        <br>
         <div class="chartjs">
             <canvas id="rating-bar2"></canvas>
         </div>
         <br>
         <div class="range-slider">
             <p style="padding: 0;font-size:12px;">Change range of data:</p>
-            <input type="range" id="rating-slider2" min="5" max="68" value="68" class="rangeSlider2">
+            <input type="range" id="rating-slider2" min="5" max="68" value="68" class="rangeSlider3">
         </div>
 
+        <br>
+        <h3>Let's investigate:</h3>
+        <p style="line-height:0">Can you seek out datapoints that reveal a negative correlation between
+            sentiment and rating? Interact with the chart to explore further!</p>
+        <p><em>Psst, here are some examples: S3E4, S3E11, S5E6</em></p>
 
+    </section>
+
+    <section class="dark-container">
+        <br>
+        <h2 style="text-align:center;">A deep dive into BoJack</h2>
+        <div style="padding-left: 100px">
+            <p>How negatively is BoJack portrayed to be, based on his dialogue in the show?</p>
+            <img src="resources/daywasgood.gif" style="width:40%;padding-left:80px;padding-right:80px;display: block;
+        margin: 0 auto;"><br>
+            <p>I compare the sentiment scores of BoJack's dialogue per episode, with that of another main character, Mr.
+                Peanutbutter.</p>
+            <p>Mr. Peanutbutter is known to be the (chaotic) <em>nice guy</em> of
+                the show, usually happy-go-lucky and unapologetically optimistic.</p>
+            <img src="resources/mrpeanutbutter.gif" style="width:40%;padding-left:80px;padding-right:80px; display: block;
+        margin: 0 auto;">
+        </div>
+        <br>
+    </section>
+
+    <section class="light-container">
+        <br>
+        <h2>BoJack vs Mr. Peanutbutter</h2>
+        <div class="buttoncontainer">
+            <div class="chartTypeButtons">
+                <button id="compareChartType" value="bar" class="comparebtn danger">Bar Chart</button>
+                <button id="compareChartType2" value="line" class="comparebtn danger">Line Chart</button>
+                <button id="compareChartType3" value="scatter" class="comparebtn danger">Scatter Chart</button>
+            </div>
+        </div>
+        <br>
+        <div class="chartjs">
+            <canvas id="compareBar"></canvas>
+        </div>
+        <br>
+        <div class="range-slider">
+            <p style="padding: 0;font-size:12px;">Change range of data:</p>
+            <input type="range" id="rating-slider-compare" min="5" max="68" value="68" class="rangeSlider3"
+                style="accent-color: #adcd4f;">
+        </div>
+        <br>
+        <h3 style="font-size:16px;">Overall, BoJack generally is portrayed more negatively than Mr. Peanutbutter.</h3>
+    </section>
+
+    <section class="dark-container">
+        <br>
+        <h2>Don't act on your emotions just yet</h2>
+        <p>I have explored the sentiments portrayed in <em>BoJack Horseman</em>,
+            and derived that its main character,
+            BoJack, is
+            typically portrayed expressing himself negatively through dialogue.</p>
+        <p>Indeed, this might be telling of the show's viewers' preferences and
+            character. If
+            you are one of the loyal fans of <em>BoJack Horseman</em>, or if you feel that BoJack's character resonates
+            strongly with
+            you, you might
+            want to start thinking about what that means now, in light of this data story. Maybe it is time to start
+            going for
+            therapy, instead of using animated characters as an outlet to work through your issues...just kidding!
+        </p>
+        <p style="font-size:larger">😊😐🥲</p>
+        <p>There are many caveats and things that need to be acknowledged with this data story.</p>
+        <p>Firstly, sentiment analysis conducted by AI is likely not fully accurate. The
+            sentiment analysis that I carried out had neglected certain context, such as the visual content of the scene
+            at
+            the time
+            of each line of dialogue being executed.</p>
+        <p>Secondly, sentiment analysis isn't the be-all and end-all of judging a show's portrayal of its themes and
+            characters.
+            One would likely find such categorisation of sentiments overly polar and insufficient in properly capturing
+            the nuances of
+            emotions portrayed on screen, especially when it comes
+            to <a
+                href="https://theconversation.com/netflixs-bojack-horseman-is-one-of-the-most-complex-animated-characters-ever-created-103932"
+                target="_blank" class="wobble">complex</a>,
+            multi-layered shows such as <em>BoJack Horseman</em>.
+        </p>
+        <h3 style="font-size:16px;font-weight:lighter">Find out more about sentiment analysis, its pros and cons, and
+            more, <a href="https://research.aimultiple.com/sentiment-analysis-methods/" target="_blank"
+                class="wobble">here</a>.</h3>
+        <img src="resources/horsinaroundtransparent.png" style="width:25%;padding-left:80px;padding-right:80px;">
+        <p>Some episodes of data had to be left out in my datasets, due to incomplete parts of the
+            transcript data. Hence, this is still not quite the <em>full</em> picture.</p>
+        <p>Furthermore, correlation definitely does not equal to causation. I definitely do not suggest that viewers of
+            the show/fans
+            who relate to BoJack Horseman possess such preferences due to the show's negativity. There are many other
+            aspects of the
+            show to enjoy or relate to, and without proper survey or other methods, there is no way of determining
+            whether the show's
+            portrayed sentiments have any effect on its viewership/viewers' behaviour.
+        </p>
+        <p>Nevertheless, if this data story has prompted you towards some reflection that has revealed personal findings
+            that align with
+            what I propose through this data story, I hope that you are feeling okay.
+        </p>
+        <p>The show deals with many hard-hitting themes, such as existentialism, addiction, depression and more. This
+            adult animated
+            series might not be suitable for all, especially those in vulnerable mental states. If you do find yourself
+            turning
+            to such shows as an outlet, or if you <a
+                href="https://www.quora.com/I-watched-Bojack-Horseman-and-now-Im-sad-What-do-I-do" target="_blank"
+                class="wobble">feel upset after
+                watching</a> or learning about the show's contents, do know that help is
+            always available if you need it. </p>
+        <p>
+            In the meantime, here is a fitting quote from the Jogging Baboon from the
+            show:
+        </p>
+        <br>
+        <img src="resources/easier.gif" style="width:60%;padding-left:80px;padding-right:80px; display: block;
+        margin: 0 auto;">
+        <br><br>
     </section>
 
 
